@@ -3,12 +3,14 @@ import 'package:pizzaria_tcc/models/pizzas.dart';
 
 class DetailPage extends StatelessWidget {
   final title;
+  final images;
   final Pizza pizzas;
 
-  DetailPage({Key key, this.title, this.pizzas});
+  DetailPage({Key key, this.title, this.pizzas, this.images});
 
   @override
   Widget build(BuildContext context){
+
     //final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -16,7 +18,7 @@ class DetailPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        child: Image.asset(pizza4.image),
+        child: Image.asset(images),
 
     ),
     );

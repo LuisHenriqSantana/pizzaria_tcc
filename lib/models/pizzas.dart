@@ -69,7 +69,7 @@ final images = [
   "images/mussarela.jpg",
   "images/chocolate.jpeg",
 ];
-final pizzaNames = [
+final names = [
   "Calabresa",
   "Vegana",
   "Frango Com Catupiry",

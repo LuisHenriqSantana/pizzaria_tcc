@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16),
                               child: Text(
-                                pizzaNames[index],
+                                names[index],
                                 style: TextStyle(
                                     color: Colors.grey[800],
                                     fontSize: 15,
