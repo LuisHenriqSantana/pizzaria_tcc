@@ -8,14 +8,12 @@ import 'package:pizzaria_tcc/pages/home/widgets/cardapio.dart';
 
 import 'widgets/home_drawer.dart';
 
-
 class HomePage extends StatelessWidget {
-  final Pizza pizza;
-
-
+final Pizza pizza;
   HomePage({this.pizza});
 
-  @override  Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -52,9 +50,7 @@ class HomePage extends StatelessWidget {
                         child: Text("Pizzas mais populares",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold
-                            )),
+                                fontSize: 30, fontWeight: FontWeight.bold)),
                       ),
                       SizedBox(
                         width: 20,
@@ -78,12 +74,19 @@ class HomePage extends StatelessWidget {
                           children: <Widget>[
                             Expanded(
                               child: Container(
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        width: 3,
+                                        color: Colors.orange
+                                    ),
+                                  borderRadius: BorderRadius.circular(20)
+                                ),
                                 child: ClipRRect(
                                   child: Image.asset(
                                     images[index],
                                     fit: BoxFit.cover,
                                   ),
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(17),
                                 ),
                               ),
                             ),
@@ -118,15 +121,12 @@ class HomePage extends StatelessWidget {
                   width: size.width * 0.4,
                   height: size.height * 0.05,
                   decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 3),
                       color: Colors.red[300],
-                      borderRadius: BorderRadius.circular(15)
-                  ),
+                      borderRadius: BorderRadius.circular(15)),
                   child: Text(
                     "Cardápio",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold
-                    ),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
                 SizedBox(

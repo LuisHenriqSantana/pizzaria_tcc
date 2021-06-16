@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pizzaria_tcc/models/pizza.dart';
 
 class DetailPage extends StatelessWidget {
-  final title;
-  final images;
-  final descriptions;
+  final Pizza pizza;
 
-  DetailPage({Key key, this.title, this.images, this.descriptions});
+  DetailPage({this.pizza});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
         appBar: AppBar(
-          title: Text(title),
+          title: Text("Sobre"),
           centerTitle: true,
         ),
         body: Padding(
@@ -21,10 +19,11 @@ class DetailPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Container(
+                color: Colors.green,
                 height: size.height * 0.3,
                 width: size.width * 1,
                 child: Image.asset(
-                  images,
+                  pizza.image,
                   fit: BoxFit.fill,
                 ),
               ),
@@ -37,7 +36,7 @@ class DetailPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(20),
                   child: Text(
-                    descriptions,
+                    pizza.description,
                     style: TextStyle(fontSize: 30, fontFamily: 'Dancing Script',color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),

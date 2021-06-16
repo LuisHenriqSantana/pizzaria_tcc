@@ -23,21 +23,12 @@ class HomeDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            trailing: Icon(Icons.sensor_door_outlined),
+            trailing: Icon(Icons.subdirectory_arrow_left_rounded, color: Colors. red, size: 30,),
             title: Text("Voltar à tela de login",
               style: TextStyle(fontSize: 20),
             ),
             onTap:  () => Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (_) => LoginPage())),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, size.width * 0.6, 0),
-            child: ListTile(
-              title: Icon(Icons.sensor_door_outlined,
-              ),
-              onTap:  () => Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (_) => LoginPage())),
-            ),
           ),
         ],
       ),

@@ -3,64 +3,74 @@ import 'package:pizzaria_tcc/data/data.dart';
 import 'package:pizzaria_tcc/models/pizza.dart';
 import '../detail_page.dart';
 
-class Cardapio extends StatelessWidget {
-  Cardapio({this.pizzas});
-  final Pizza pizzas;
+class Cardapio extends StatefulWidget {
+  @override
+  _CardapioState createState() => _CardapioState();
+}
+
+class _CardapioState extends State<Cardapio> {
+  _buildPizzas() {
+    List<Widget> pizzaList = [];
+    pizzas.forEach((Pizza pizza) {
+      final size = MediaQuery.of(context).size;
+      pizzaList.add(GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => DetailPage(pizza: pizza),
+          ),
+        ),
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              width: 1,
+              color: Colors.red,
+            ),
+          ),
+          child: Row(
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Hero(
+                  tag: pizza.image,
+                  child: Image(
+                    height: size.height * 0.15,
+                    width: size.width * 0.4,
+                    image: AssetImage(pizza.image),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Expanded(
+                  child: Container(
+                margin: EdgeInsets.all(12),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          pizza.name,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+              ))
+            ],
+          ),
+        ),
+      ));
+    });
+    return Column(children: pizzaList);
+  }
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Container(
-      color: Colors.white12,
-      height: size.height * 0.55,
-      child: ListView.separated(
-        scrollDirection: Axis.vertical,
-        itemBuilder: (context, index) {
-          return Row(children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Hero(
-                tag: images[4 - index],
-                child: Image(
-                  height: 110.0,
-                  width: 160.0,
-                  image: AssetImage(images[index]),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: Text(
-                names[index],
-                style: TextStyle(
-                  color: Colors.grey[800],
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Container(
-                child: IconButton(
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => DetailPage(
-                            title: names[index],
-                            images: images[index],
-                            descriptions: descriptions[index],
-                          ))),
-              icon: Icon(Icons.add_circle, color: Colors.red),
-            ))
-          ]);
-        },
-        separatorBuilder: (context, _) => SizedBox(
-          height: size.height * 0.01,
-        ),
-        itemCount: images.length,
-      ),
-    );
+    return _buildPizzas();
   }
 }

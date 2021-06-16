@@ -50,22 +50,15 @@ List<Pizza> pizzas = [
 
 final images = [
   "images/calabresa.jpg",
+  "images/mussarela.jpg",
   "images/vegana.jpg",
   "images/frango.jpg",
-  "images/mussarela.jpg",
   "images/chocolate.jpeg",
 ];
 final names = [
   "Calabresa",
+  "Mussarela",
   "Pizza Vegana",
   "Frango Com Catupiry",
-  "Mussarela",
   "Chocolate com morango",
-];
-final descriptions = [
-  "Uma pizza saborosa com Linguiça calabresa, rodelas de cebolas frescas, molho de tomate e orégano.",
-  "Uma pizza Vegana saborosa com pimentão, cebola, champignon, azeitona preta, tomate, tomate-seco e orégano",
-  "Uma pizza saborosa com molho de tomate fresco, frango desfiado levemente temperado, cobertura de catupiry, azeitonas pretas e orégano",
-  "Uma pizza saborosa com queijo Mussarela, molho de tomate e orégano",
-  "Uma pizza doce saborosa com chocolate e morangos",
 ];
