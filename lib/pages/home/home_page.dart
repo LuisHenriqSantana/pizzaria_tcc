@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pizzaria_tcc/models/pizzas.dart';
+import 'package:pizzaria_tcc/data/data.dart';
+import 'package:pizzaria_tcc/models/pizza.dart';
 import 'package:pizzaria_tcc/pages/cart/cart_page.dart';
 import 'package:pizzaria_tcc/pages/home/widgets/cardapio.dart';
 
@@ -95,7 +96,7 @@ class HomePage extends StatelessWidget {
                                 names[index],
                                 style: TextStyle(
                                     color: Colors.grey[800],
-                                    fontSize: 15,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.bold),
                               ),
                             )

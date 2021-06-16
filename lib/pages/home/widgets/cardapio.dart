@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pizzaria_tcc/models/pizzas.dart';
+import 'package:pizzaria_tcc/data/data.dart';
+import 'package:pizzaria_tcc/models/pizza.dart';
 import '../detail_page.dart';
 
 class Cardapio extends StatelessWidget {
-   Cardapio({
-    this.pizza,
-  });
-  final Pizza pizza;
+  Cardapio({this.pizzas});
+  final Pizza pizzas;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -14,7 +13,6 @@ class Cardapio extends StatelessWidget {
       color: Colors.white12,
       height: size.height * 0.55,
       child: ListView.separated(
-        shrinkWrap: false,
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
           return Row(children: <Widget>[
@@ -25,7 +23,7 @@ class Cardapio extends StatelessWidget {
                 child: Image(
                   height: 110.0,
                   width: 160.0,
-                  image: AssetImage (images[index]),
+                  image: AssetImage(images[index]),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -35,7 +33,8 @@ class Cardapio extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
-              child: Text(names[index],
+              child: Text(
+                names[index],
                 style: TextStyle(
                   color: Colors.grey[800],
                   fontSize: 18,
@@ -45,10 +44,16 @@ class Cardapio extends StatelessWidget {
             ),
             Container(
                 child: IconButton(
-                  onPressed: () => Navigator.push(
-          context, MaterialPageRoute(builder: (_) => DetailPage(title: names[index],  ))),
-                  icon: Icon(Icons.add_circle, color: Colors.red),
-                ))
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => DetailPage(
+                            title: names[index],
+                            images: images[index],
+                            descriptions: descriptions[index],
+                          ))),
+              icon: Icon(Icons.add_circle, color: Colors.red),
+            ))
           ]);
         },
         separatorBuilder: (context, _) => SizedBox(
