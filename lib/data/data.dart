@@ -2,7 +2,7 @@ import 'package:pizzaria_tcc/models/pizza.dart';
 
 final _calabresa = Pizza(
   id: 0,
-  name: "Calabresa",
+  name: "De Calabresa",
   description:
       "Uma pizza saborosa com Linguiça calabresa, rodelas de cebolas frescas, molho de tomate e orégano.",
   image: "images/calabresa.jpg",
@@ -10,7 +10,7 @@ final _calabresa = Pizza(
 );
 final _mussarela = Pizza(
   id: 1,
-  name: "Mussarela",
+  name: "De Mussarela",
   description:
       "Uma pizza saborosa com queijo Mussarela, molho de tomate e orégano",
   image: "images/mussarela.jpg",
@@ -18,7 +18,7 @@ final _mussarela = Pizza(
 );
 final _frangoCat = Pizza(
   id: 2,
-  name: "Frango com Catupiry",
+  name: "De Frango com Catupiry",
   description:
       "Uma pizza saborosa com molho de tomate fresco, frango desfiado levemente temperado, cobertura de catupiry, azeitonas pretas e orégano",
   image: "images/frango.jpg",
@@ -34,7 +34,7 @@ final _vegana = Pizza(
 );
 final _chocolate = Pizza(
   id: 4,
-  name: "Chocolate com Morango",
+  name: "De Chocolate com Morango",
   description: "Uma pizza doce saborosa com chocolate e morangos",
   image: "images/chocolate.jpeg",
   price: 23.50,
