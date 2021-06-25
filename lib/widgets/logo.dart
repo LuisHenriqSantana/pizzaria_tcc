@@ -18,7 +18,6 @@ class Logo extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 0),
             spreadRadius: 5,
             blurRadius: 4,
             color: Colors.red,
@@ -26,7 +25,7 @@ class Logo extends StatelessWidget {
         ],
       ),
       child: Image(
-        image: AssetImage("images/logo.jpeg"),
+        image: AssetImage("images/logo2.jpeg"),
         fit: BoxFit.cover,
       ),
     );

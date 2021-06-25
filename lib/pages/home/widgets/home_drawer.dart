@@ -15,11 +15,10 @@ class HomeDrawer extends StatelessWidget {
       child: ListView(
         children:[
           DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.black,
-            ),
-            child: Image.asset('images/logo.jpeg',
-              fit: BoxFit.fill,
+            child: Container(
+              child: Image.asset('images/logo2.jpeg',
+                fit: BoxFit.fill,
+              ),
             ),
           ),
           ListTile(

@@ -22,7 +22,7 @@ final Pizza pizza;
         backgroundColor: Colors.red,
         elevation: 0,
         centerTitle: true,
-        title: Text('Busque Pizza',
+        title: Text('8 Pedaços',
             style: TextStyle(color: Colors.black, fontSize: 30)),
         actions: <Widget>[
           IconButton(
