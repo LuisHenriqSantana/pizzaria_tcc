@@ -98,18 +98,18 @@ class DetailPage extends StatelessWidget {
                           SizedBox(height: size.height * 0.1),
                           Align(
                             alignment: Alignment.bottomCenter,
-                            child: FlatButton.icon(
-                              height: size.height * 0.06,
-                              minWidth: size.width,
+                            child: Container(
                               color: Colors.black,
-                              label: Text("Adicionar ao Carrinho",
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white)),
-                              icon: Icon(
-                                Icons.add_shopping_cart,
-                                color: Colors.white,
+                              child: TextButton.icon(
+                                label: Text("Adicionar ao Carrinho",
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white)),
+                                icon: Icon(
+                                  Icons.add_shopping_cart,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {},
                               ),
-                              onPressed: () {},
                             ),
                           ),
                         ],

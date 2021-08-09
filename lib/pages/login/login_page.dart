@@ -47,7 +47,7 @@ class LoginPage extends StatelessWidget {
                         obscureText: true,
                       ),
                     ),
-                    RaisedButton.icon(
+                    TextButton.icon(
                       onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -58,7 +58,7 @@ class LoginPage extends StatelessWidget {
 
                     SizedBox(height: size.height * 0.02),
 
-                    RaisedButton.icon(
+                    TextButton.icon(
                       onPressed: () => Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) => SignUpPage())),
                       icon: Icon(Icons.person),

@@ -81,14 +81,14 @@ class SignUpPage extends StatelessWidget {
                       obscureText: true,
                     ),
                     SizedBox(height: size.height * 0.03),
-                    RaisedButton.icon(
+                    TextButton.icon(
                       onPressed: () => Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) => HomePage())),
                       icon: Icon(Icons.person),
                       label: Text('Criar Conta'),
                     ),
                     SizedBox(height: size.height * 0.02),
-                    RaisedButton.icon(
+                    TextButton.icon(
                       onPressed: () => Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) => LoginPage())),
                       label: Text('Já tem uma conta? Faça login'.toUpperCase()),
