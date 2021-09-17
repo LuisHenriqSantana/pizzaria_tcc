@@ -7,7 +7,6 @@ import 'pages/login/login_page.dart';
 void main() {
   runApp(MyApp());
 
-  Firestore.instance.collection('teste').add({"teste":'teste'});
 }
 
 class MyApp extends StatelessWidget {

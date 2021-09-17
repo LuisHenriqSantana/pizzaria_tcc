@@ -77,7 +77,6 @@ class LoginPage extends StatelessWidget {
                         TextButton.icon(
                           onPressed: userManager.loading ? null : () {
                             if (formKey.currentState.validate()) {
-                              print(emailController.text);
                               userManager.signIn(
                                 user: User(
                                     email: emailController.text,

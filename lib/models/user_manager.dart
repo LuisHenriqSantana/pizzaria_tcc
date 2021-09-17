@@ -4,10 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:pizzaria_tcc/helpers/firebase_errors.dart';
 import 'package:pizzaria_tcc/models/user.dart';
 
-
-class UserManager extends ChangeNotifier{
-
-  UserManager(){
+class UserManager extends ChangeNotifier {
+  UserManager() {
     _loadCurrentUser();
   }
 
@@ -26,23 +24,37 @@ class UserManager extends ChangeNotifier{
       this.user = result.user;
 
       onSuccess();
-    } on PlatformException catch (e){
+    } on PlatformException catch (e) {
       onFail(getErrorString(e.code));
     }
     setLoading(false);
   }
 
-  void setLoading(bool value){
+  Future<void> signUp({User user, Function onFail, Function onSuccess}) async {
+    loading = true;
+    try {
+      final AuthResult result = await auth.createUserWithEmailAndPassword(
+          email: user.email, password: user.password);
+
+      this.user = result.user;
+
+      onSuccess();
+    } on PlatformException catch (e) {
+      onFail(getErrorString(e.code));
+    }
+    loading = false;
+  }
+
+  void setLoading(bool value) {
     loading = value;
   }
 
-  Future<void> _loadCurrentUser() async{
+  Future<void> _loadCurrentUser() async {
     FirebaseUser currentUser = await auth.currentUser();
-    if (currentUser != null){
+    if (currentUser != null) {
       user = currentUser;
       print(user.uid);
     }
     notifyListeners();
   }
-
 }
