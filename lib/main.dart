@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pizzaria_tcc/models/user_manager.dart';
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
     return ChangeNotifierProvider(
+      lazy: false,
       create: (_) => UserManager() ,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

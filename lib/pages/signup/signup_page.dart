@@ -64,6 +64,7 @@ class SignUpPage extends StatelessWidget {
                         ),
                       ),
                       keyboardType: TextInputType.number,
+                      maxLength: 8,
                       validator: (cep) {
                         if (cep.isEmpty)
                           return "Campo Obrigatório";
@@ -142,19 +143,18 @@ class SignUpPage extends StatelessWidget {
                           }
                           context.read<UserManager>().signUp(
                               user: user,
-                            onSuccess: ()=> Navigator.pushReplacement(
+                              onSuccess: () => Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (_) => HomePage())),
-                            onFail: (e){
+                              onFail: (e) {
                                 scaffoldKey.currentState.showSnackBar(
                                   SnackBar(
                                     content: Text("Falha ao cadastrar: $e"),
                                     backgroundColor: Colors.red,
                                   ),
                                 );
-                            }
-                          );
+                              });
                         }
                       },
                       icon: Icon(Icons.person),
