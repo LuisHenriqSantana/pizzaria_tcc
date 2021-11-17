@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pizzaria_tcc/pages/cart/cart_page.dart';
 import 'package:pizzaria_tcc/pages/login/login_page.dart';
 import 'package:pizzaria_tcc/models/user_manager.dart';
 import 'package:provider/provider.dart';
@@ -88,8 +89,8 @@ class HomeDrawer extends StatelessWidget {
                       "Carrinho",
                       style: TextStyle(fontSize: 20),
                     ),
-                    onTap: () => Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (_) => LoginPage())),
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => CartPage())),
                   ),
                 ],
               );

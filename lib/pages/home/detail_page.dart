@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizzaria_tcc/models/pizza.dart';
+import 'package:pizzaria_tcc/pages/cart/cart_page.dart';
 
 class DetailPage extends StatelessWidget {
   final Pizza pizza;
@@ -53,6 +54,9 @@ class DetailPage extends StatelessWidget {
                                 "Pizza " + pizza.name,
                                 style: TextStyle(
                                     fontSize: 22, fontWeight: FontWeight.bold),
+
+                                overflow: TextOverflow.fade,
+                                maxLines: 4,
                               ),
                               Icon(Icons.local_pizza,
                                   color: Colors.red, size: 30),
@@ -108,7 +112,8 @@ class DetailPage extends StatelessWidget {
                                   Icons.add_shopping_cart,
                                   color: Colors.white,
                                 ),
-                                onPressed: () {},
+                                onPressed: () => Navigator.pushReplacement(context,
+                                MaterialPageRoute(builder: (_) => CartPage())),
                               ),
                             ),
                           ),

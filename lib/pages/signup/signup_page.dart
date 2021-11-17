@@ -28,7 +28,7 @@ class SignUpPage extends StatelessWidget {
             Text(
               'Cadastre-se',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.headline2 ,
             ),
             Padding(
               padding: EdgeInsets.all(30),
